@@ -11,7 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	self.text = Globals.status_text
-	if Globals.status_text_changed:
+	if Globals.status_text_changed or Globals.game_won:
 		self.visible = true
 		text_changed = true
 		Globals.status_text_changed = false

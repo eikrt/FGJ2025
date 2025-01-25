@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://brcgvbckvjat8"]
+[gd_scene load_steps=12 format=3 uid="uid://brcgvbckvjat8"]
 
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_x0mku"]
 [ext_resource type="Texture2D" uid="uid://74turfa1xau8" path="res://assets/kolikko.png" id="2_pmoev"]
+[ext_resource type="AudioStream" uid="uid://w5xp1kev0evr" path="res://sound/kolikko.mp3" id="3_8i70y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3itl2"]
 radius = 12.0416
@@ -66,4 +67,8 @@ shape = SubResource("CircleShape2D_3itl2")
 sprite_frames = SubResource("SpriteFrames_amc45")
 autoplay = "default"
 
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8i70y")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="PickupSound" to="." method="_on_pickup_sound_finished"]

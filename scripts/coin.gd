@@ -15,4 +15,10 @@ func _on_body_entered(body: Node2D) -> void:
 	if "_get_name" in body:
 		if body._get_name() == "Player":
 			Globals.coins += 1
-			self.queue_free()
+			$PickupSound.play()
+			self.visible = false
+			$CollisionShape2D.disabled = true
+
+
+func _on_pickup_sound_finished() -> void:
+	self.queue_free()

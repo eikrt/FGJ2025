@@ -1,10 +1,12 @@
-[gd_scene load_steps=189 format=3 uid="uid://doye1ssaau1bx"]
+[gd_scene load_steps=191 format=3 uid="uid://doye1ssaau1bx"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_qk08l"]
 [ext_resource type="Texture2D" uid="uid://bq2yfkbh2ciuy" path="res://assets/bubble_blow.png" id="2_aqaw8"]
 [ext_resource type="Texture2D" uid="uid://bl041af21jmn8" path="res://assets/bubble_idle.png" id="2_estqp"]
 [ext_resource type="Texture2D" uid="uid://du48lqjhcaj6w" path="res://assets/death_animation.png" id="4_12831"]
 [ext_resource type="Texture2D" uid="uid://y4hwaw0de1mm" path="res://assets/metamorphosis.png" id="5_g2hsl"]
+[ext_resource type="AudioStream" uid="uid://o6hgl2s2r3ty" path="res://sound/syntymä.mp3" id="6_7jewf"]
+[ext_resource type="AudioStream" uid="uid://dllivc7qfwuir" path="res://sound/kuolema.mp3" id="7_8d85f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p12yt"]
 atlas = ExtResource("2_aqaw8")
@@ -1366,6 +1368,12 @@ autoplay = "default"
 [node name="WinAnimation" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_whsni")
+
+[node name="BirthSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7jewf")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8d85f")
 
 [connection signal="animation_finished" from="DeathAnimation" to="." method="_on_death_animation_animation_finished"]
 [connection signal="animation_looped" from="DeathAnimation" to="." method="_on_death_animation_animation_looped"]

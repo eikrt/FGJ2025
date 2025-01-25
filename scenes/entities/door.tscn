@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj3e2da5hvsaq"]
+[gd_scene load_steps=8 format=3 uid="uid://bj3e2da5hvsaq"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_l558j"]
 [ext_resource type="Texture2D" uid="uid://b4v2dp1lduou2" path="res://assets/door_red.png" id="2_cr6na"]
 [ext_resource type="Texture2D" uid="uid://rxd30orm814u" path="res://assets/door_green.png" id="3_yn7el"]
 [ext_resource type="Texture2D" uid="uid://bm8rsvtcsv8rd" path="res://assets/door_blue.png" id="4_8l8qm"]
+[ext_resource type="AudioStream" uid="uid://d4dmys52b5if4" path="res://sound/ovi.mp3" id="5_cdp2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odbcc"]
 size = Vector2(49, 94)
@@ -36,4 +37,8 @@ texture = ExtResource("3_yn7el")
 visible = false
 texture = ExtResource("4_8l8qm")
 
+[node name="DoorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cdp2g")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="DoorSound" to="." method="_on_audio_stream_player_finished"]

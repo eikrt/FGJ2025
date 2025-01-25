@@ -19,10 +19,20 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	Globals.status_text_changed = true
 	if index == 0:
 		Globals.has_key_1 = true
-		self.queue_free()
+		$PickupSound.play()
+		self.visible = false
+		$Area2D/CollisionShape2D.disabled = true
 	if index == 1:
 		Globals.has_key_2 = true
-		self.queue_free()
+		$PickupSound.play()
+		self.visible = false
+		$Area2D/CollisionShape2D.disabled = true
 	if index == 2:
 		Globals.has_key_3 = true
-		self.queue_free()
+		$PickupSound.play()
+		self.visible = false
+		$Area2D/CollisionShape2D.disabled = true
+
+
+func _on_pickup_sound_finished() -> void:
+	self.queue_free()

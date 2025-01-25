@@ -11,6 +11,7 @@ var death_anim_playing = false
 var won = false
 func _ready():
 	Globals.player_pos = self.global_position
+	$BirthSound.play()
 	
 func _physics_process(delta: float) -> void:
 	Globals.player_pos = self.global_position
@@ -157,6 +158,7 @@ func _physics_process(delta: float) -> void:
 		$DeathAnimation.visible = true;
 		$DeathAnimation.play()
 		death_anim_playing = true
+		$DeathSound.play()
 		Globals.game_over = false
 		Globals.game_game_over = false
 	if Globals.game_game_over:
@@ -230,6 +232,7 @@ func _on_death_animation_animation_finished() -> void:
 		self.global_position = Globals.current_checkpoint.global_position
 		$MetamorphosisAnimation.visible = true
 		$MetamorphosisAnimation.play()
+		$BirthSound.play()
 	
 
 

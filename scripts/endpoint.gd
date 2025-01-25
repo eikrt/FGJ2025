@@ -14,5 +14,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if "_get_name" in body:
 		if body._get_name() == "Player":
 			Globals.game_won = true
-			Globals.status_message_changed = true
-			Globals.status_message = "Congratulations! You are the master of the depths!"
+			Globals.status_text_changed = true
+			Globals.status_text = "Congratulations! You are the master of the depths!"

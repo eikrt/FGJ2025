@@ -10,7 +10,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if open:
-		queue_free()
+		$DoorSound.play()
+		self.visible = false
+		$CollisionShape2D.disabled = true
+		open = false
 	if index == 0:
 		$Red.visible = true
 	if index == 1:
@@ -28,3 +31,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		open = true
 	if Globals.has_key_3 && index == 2:
 		open = true	
+
+
+func _on_audio_stream_player_finished() -> void:
+	queue_free()
