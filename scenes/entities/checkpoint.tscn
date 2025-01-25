@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://76grvqf5knad"]
+
+[ext_resource type="Script" path="res://scripts/checkpoint.gd" id="1_30a0h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oneq7"]
+radius = 133.0
+height = 266.0
+
+[node name="Checkpoint" type="Area2D"]
+script = ExtResource("1_30a0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_oneq7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

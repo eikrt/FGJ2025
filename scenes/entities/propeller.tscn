@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://wgle3eedffqy"]
+
+[ext_resource type="Script" path="res://scripts/propeller.gd" id="1_aoh6f"]
+[ext_resource type="Texture2D" uid="uid://cb4jsdk4ob5c" path="res://assets/propeller_blade.png" id="1_d7boy"]
+[ext_resource type="Texture2D" uid="uid://bkxq0tgsc07xg" path="res://assets/propeller_mid.png" id="2_ajqgq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4poo"]
+height = 70.0
+
+[node name="Propeller" type="Area2D"]
+script = ExtResource("1_aoh6f")
+
+[node name="Blades" type="Sprite2D" parent="."]
+texture = ExtResource("1_d7boy")
+
+[node name="Propeller" type="Sprite2D" parent="."]
+texture = ExtResource("2_ajqgq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -33)
+shape = SubResource("CapsuleShape2D_y4poo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(16, 19)
+rotation = 2.39459
+shape = SubResource("CapsuleShape2D_y4poo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-14, 21)
+rotation = 3.831
+shape = SubResource("CapsuleShape2D_y4poo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-30, -8)
+rotation = 5.14698
+shape = SubResource("CapsuleShape2D_y4poo")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(25, -10)
+rotation = 4.30922
+shape = SubResource("CapsuleShape2D_y4poo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

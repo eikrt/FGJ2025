@@ -12,6 +12,7 @@ var coins = 0
 var has_key_1 = false
 var has_key_2 = false
 var has_key_3 = false
+var current_checkpoint = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

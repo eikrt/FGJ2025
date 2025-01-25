@@ -11,6 +11,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if open:
 		queue_free()
+	if index == 0:
+		$Red.visible = true
+	if index == 1:
+		$Green.visible = true
+	if index == 2:
+		$Blue.visible = true
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

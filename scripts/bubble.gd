@@ -138,6 +138,8 @@ func _physics_process(delta: float) -> void:
 		$Down.visible = false
 		if not death_anim_playing:
 			$Idle.visible = true
+		else:
+			$Idle.visible = false
 		
 	self.position -= velocity * x
 	if Globals.game_over:
@@ -169,8 +171,34 @@ func _physics_process(delta: float) -> void:
 		$Down.visible = false
 		$Idle.visible = false
 		Globals.game_game_over = false
+	if death_anim_playing:
+		$Idle.visible = false
+		$DeathAnimation.visible = true
+		$Idle.visible = false
+		$LeftCorner.visible = false
+		$RightCorner.visible = false
+		$DownRightCorner.visible = false
+		$DownLeftCorner.visible = false
+		$Left.visible = false
+		$Right.visible = false
+		$Up.visible = false
+		$Down.visible = false
+		$Idle.visible = false
+	if $MetamorphosisAnimation.is_playing() and $MetamorphosisAnimation.visible:
+		$Idle.visible = false
+		$DeathAnimation.visible = false
+		$Idle.visible = false
+		$LeftCorner.visible = false
+		$RightCorner.visible = false
+		$DownRightCorner.visible = false
+		$DownLeftCorner.visible = false
+		$Left.visible = false
+		$Right.visible = false
+		$Up.visible = false
+		$Down.visible = false
+		$Idle.visible = false
 	move_and_slide()
-				
+	
 func _get_name():
 	return "Player"
 
@@ -178,6 +206,10 @@ func _get_name():
 func _on_death_animation_animation_finished() -> void:
 	Globals.game_game_over = true
 	death_anim_playing = false
+	if Globals.current_checkpoint:
+		self.global_position = Globals.current_checkpoint.global_position
+		$MetamorphosisAnimation.visible = true
+		$MetamorphosisAnimation.play()
 	
 
 
@@ -187,3 +219,7 @@ func _on_death_animation_animation_looped() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)
+
+
+func _on_metamorphosis_animation_animation_finished() -> void:
+	$MetamorphosisAnimation.visible = false

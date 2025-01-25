@@ -1,22 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://da4esopgqswc8"]
+[gd_scene load_steps=11 format=3 uid="uid://da4esopgqswc8"]
 
 [ext_resource type="Script" path="res://scripts/shark.gd" id="1_2o5kt"]
+[ext_resource type="Texture2D" uid="uid://0hpq4smjl1aj" path="res://assets/submarine.png" id="2_t4fgd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sxpe5"]
-radius = 5.09902
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4tver"]
+radius = 12.0
+height = 44.0
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ofiqc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdbkc"]
+atlas = ExtResource("2_t4fgd")
+region = Rect2(0, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxbtu"]
+atlas = ExtResource("2_t4fgd")
+region = Rect2(48, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d56v"]
+atlas = ExtResource("2_t4fgd")
+region = Rect2(96, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apnwh"]
+atlas = ExtResource("2_t4fgd")
+region = Rect2(144, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucc4t"]
+atlas = ExtResource("2_t4fgd")
+region = Rect2(192, 0, 48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg7js"]
+atlas = ExtResource("2_t4fgd")
+region = Rect2(240, 0, 48, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nu0t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdbkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxbtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d56v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apnwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucc4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg7js")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="Shark" type="Area2D"]
 script = ExtResource("1_2o5kt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_sxpe5")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4tver")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(2.38419e-07, 9.53674e-07)
-scale = Vector2(7.5, 5.5)
-mesh = SubResource("CapsuleMesh_ofiqc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nu0t5")
+autoplay = "default"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
