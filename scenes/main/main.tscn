@@ -1,0 +1,388 @@
+[gd_scene load_steps=13 format=3 uid="uid://4scg33vgva63"]
+
+[ext_resource type="PackedScene" uid="uid://doye1ssaau1bx" path="res://scenes/entities/bubble.tscn" id="1_7oifv"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_dxwpj"]
+[ext_resource type="PackedScene" uid="uid://da4esopgqswc8" path="res://scenes/entities/shark.tscn" id="3_r7jks"]
+[ext_resource type="PackedScene" uid="uid://bmdtpybur3vko" path="res://scenes/entities/thruster.tscn" id="3_w7e3a"]
+[ext_resource type="Script" path="res://scripts/coin_label.gd" id="6_ekkuk"]
+[ext_resource type="PackedScene" uid="uid://2tf14d2j4p6" path="res://scenes/entities/flow.tscn" id="6_mfpko"]
+[ext_resource type="PackedScene" uid="uid://cduug75y2slii" path="res://scenes/entities/geysir.tscn" id="7_42wcw"]
+[ext_resource type="Script" path="res://scripts/key_label.gd" id="7_wau4x"]
+[ext_resource type="PackedScene" uid="uid://bj3e2da5hvsaq" path="res://scenes/entities/door.tscn" id="8_gy0m4"]
+[ext_resource type="PackedScene" uid="uid://darmxdtb4ukhj" path="res://tiled/map2.tscn" id="9_ewt2s"]
+[ext_resource type="PackedScene" uid="uid://difu6p14bbae8" path="res://scenes/entities/key.tscn" id="9_kumix"]
+[ext_resource type="PackedScene" uid="uid://4hhbg8v5aq1b" path="res://scenes/entities/killzone.tscn" id="11_143q6"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(283, 12049)
+script = ExtResource("1_dxwpj")
+
+[node name="Control" type="Control" parent="Camera2D"]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinLabel" type="RichTextLabel" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -317.0
+offset_top = 156.0
+offset_right = -226.0
+offset_bottom = 196.0
+text = "Coins: 
+"
+script = ExtResource("6_ekkuk")
+
+[node name="KeyLabel" type="RichTextLabel" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 146.0
+offset_right = 164.0
+offset_bottom = 186.0
+script = ExtResource("7_wau4x")
+
+[node name="Bubble" parent="." instance=ExtResource("1_7oifv")]
+position = Vector2(1979, 9504)
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Shark" parent="Entities" instance=ExtResource("3_r7jks")]
+position = Vector2(191, 83)
+
+[node name="Flow" parent="Entities" instance=ExtResource("6_mfpko")]
+position = Vector2(706, 11192)
+
+[node name="Flow5" parent="Entities" instance=ExtResource("6_mfpko")]
+position = Vector2(6074, 11020)
+force_amount = 1.2
+
+[node name="Flow4" parent="Entities" instance=ExtResource("6_mfpko")]
+position = Vector2(2208, 9895)
+force_amount = 1.2
+
+[node name="Flow3" parent="Entities" instance=ExtResource("6_mfpko")]
+position = Vector2(4621, 11544)
+rotation = 1.5708
+force_amount = 1.2
+
+[node name="Flow2" parent="Entities" instance=ExtResource("6_mfpko")]
+position = Vector2(314, 11200)
+rotation = 3.14159
+
+[node name="Geysir" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4196, 11113)
+
+[node name="Geysir2" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4353, 11113)
+
+[node name="Geysir3" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4543, 11121)
+
+[node name="Geysir4" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4305, 10900)
+
+[node name="Geysir5" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4261, 10898)
+
+[node name="Geysir6" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4218, 10901)
+
+[node name="Geysir7" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4176, 10901)
+
+[node name="Geysir8" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4189, 10667)
+
+[node name="Geysir9" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4309, 10726)
+
+[node name="Geysir14" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4893, 11905)
+
+[node name="Geysir15" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(5679, 11690)
+
+[node name="Geysir16" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(5355, 9286)
+
+[node name="Geysir17" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(5500, 9286)
+
+[node name="Geysir18" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(5659, 9289)
+
+[node name="Geysir19" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(5791, 9289)
+
+[node name="Geysir20" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(5913, 9288)
+
+[node name="Geysir10" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4430, 10662)
+
+[node name="Geysir11" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(4545, 10729)
+
+[node name="Key" parent="Entities" instance=ExtResource("9_kumix")]
+position = Vector2(2226, 9505)
+
+[node name="Key2" parent="Entities" instance=ExtResource("9_kumix")]
+position = Vector2(4828, 11540)
+index = 1
+
+[node name="Key3" parent="Entities" instance=ExtResource("9_kumix")]
+position = Vector2(6161, 10929)
+index = 2
+
+[node name="Thruster" parent="." instance=ExtResource("3_w7e3a")]
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("8_gy0m4")]
+position = Vector2(285, 25)
+
+[node name="Keys" type="Node2D" parent="."]
+
+[node name="Key" parent="Keys" instance=ExtResource("9_kumix")]
+position = Vector2(287, 139)
+
+[node name="map2" parent="." instance=ExtResource("9_ewt2s")]
+
+[node name="KillZones" type="Node2D" parent="."]
+
+[node name="KillZone" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(325, 11337)
+scale = Vector2(13, 1)
+
+[node name="KillZone42" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1906, 11897)
+scale = Vector2(4, 1)
+
+[node name="KillZone43" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2074, 11934)
+scale = Vector2(4, 1)
+
+[node name="KillZone44" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2073, 11958)
+scale = Vector2(4, 1)
+
+[node name="KillZone45" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2074, 11990)
+scale = Vector2(4, 1)
+
+[node name="KillZone46" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1763, 12032)
+scale = Vector2(4, 1)
+
+[node name="KillZone47" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1284, 11994)
+scale = Vector2(4, 1)
+
+[node name="KillZone48" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1139, 12102)
+scale = Vector2(4, 1)
+
+[node name="KillZone49" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(968, 11995)
+scale = Vector2(4, 1)
+
+[node name="KillZone50" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(830, 12104)
+scale = Vector2(4, 1)
+
+[node name="KillZone2" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(710, 11055)
+scale = Vector2(11, 1)
+
+[node name="KillZone3" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1782, 10479)
+scale = Vector2(1, 16)
+
+[node name="KillZone37" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(942, 10333)
+scale = Vector2(1, 6)
+
+[node name="KillZone38" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(571, 10083)
+scale = Vector2(1, 7)
+
+[node name="KillZone39" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(289, 9295)
+scale = Vector2(4, 1)
+
+[node name="KillZone40" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(637, 9319)
+scale = Vector2(6, 1)
+
+[node name="KillZone41" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(684, 9234)
+
+[node name="KillZone4" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1867, 10478)
+scale = Vector2(1, 16)
+
+[node name="KillZone5" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1810, 10304)
+
+[node name="KillZone6" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1833, 10305)
+
+[node name="KillZone7" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1812, 10652)
+
+[node name="KillZone8" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1833, 10651)
+
+[node name="KillZone9" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2077, 10724)
+
+[node name="KillZone10" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2098, 10724)
+
+[node name="KillZone11" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2120, 10725)
+
+[node name="KillZone12" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2143, 10725)
+
+[node name="KillZone15" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2077, 10724)
+
+[node name="KillZone16" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2098, 10724)
+
+[node name="KillZone17" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2120, 10725)
+
+[node name="KillZone19" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2055, 10826)
+
+[node name="KillZone20" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2076, 10826)
+
+[node name="KillZone21" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2098, 10827)
+
+[node name="KillZone22" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2055, 10826)
+
+[node name="KillZone23" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2076, 10826)
+
+[node name="KillZone24" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2098, 10827)
+
+[node name="KillZone59" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4163, 10500)
+
+[node name="KillZone61" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4256, 10455)
+
+[node name="KillZone62" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4278, 10455)
+
+[node name="KillZone63" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4286, 10455)
+
+[node name="KillZone64" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4355, 10499)
+
+[node name="KillZone65" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4525, 10452)
+
+[node name="KillZone66" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4404, 10355)
+
+[node name="KillZone67" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4380, 10355)
+
+[node name="KillZone68" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4381, 10286)
+
+[node name="KillZone69" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4405, 10287)
+
+[node name="KillZone70" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4284, 10354)
+
+[node name="KillZone71" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4211, 10357)
+
+[node name="KillZone60" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(4235, 10455)
+
+[node name="KillZone51" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1068, 10624)
+
+[node name="KillZone52" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1089, 10624)
+
+[node name="KillZone53" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1140, 10734)
+
+[node name="KillZone54" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(875, 10626)
+
+[node name="KillZone55" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(805, 10732)
+
+[node name="KillZone56" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(782, 10732)
+
+[node name="KillZone57" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(636, 10736)
+
+[node name="KillZone58" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(372, 10626)
+
+[node name="KillZone25" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1455, 10216)
+
+[node name="KillZone26" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1476, 10216)
+
+[node name="KillZone27" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1498, 10217)
+
+[node name="KillZone28" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1455, 10216)
+
+[node name="KillZone29" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1476, 10216)
+
+[node name="KillZone30" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1498, 10217)
+
+[node name="KillZone31" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1357, 10300)
+
+[node name="KillZone32" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1378, 10300)
+
+[node name="KillZone33" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1400, 10301)
+
+[node name="KillZone34" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1357, 10300)
+
+[node name="KillZone35" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1378, 10300)
+
+[node name="KillZone36" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1400, 10301)
+
+[node name="KillZone18" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2143, 10725)
+
+[node name="KillZone13" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2199, 10557)
+scale = Vector2(1, 12)
+
+[node name="KillZone14" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(2315, 10562)
+scale = Vector2(1, 12)
+
+[connection signal="body_entered" from="Thruster" to="Thruster" method="_on_body_entered"]
