@@ -13,6 +13,10 @@ var has_key_1 = false
 var has_key_2 = false
 var has_key_3 = false
 var current_checkpoint = null
+var status_text = ""
+var status_text_changed = false
+var game_won = false
+var tutorialOn = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

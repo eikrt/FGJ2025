@@ -13,8 +13,8 @@
             "scale": 0.125,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 2688,
-                "y": 2892
+                "x": 2296,
+                "y": 2468
             }
         },
         "tileset.tsx": {
@@ -36,8 +36,8 @@
     ],
     "project": "map.tiled-project",
     "recentFiles": [
-        "tileset.tsx",
-        "map.tmx"
+        "map.tmx",
+        "tileset.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

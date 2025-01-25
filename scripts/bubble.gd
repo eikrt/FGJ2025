@@ -8,6 +8,7 @@ var force_rotation = 0.0
 var force_amount = 0
 var f_rot = false
 var death_anim_playing = false
+var won = false
 func _ready():
 	Globals.player_pos = self.global_position
 	
@@ -17,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		self.velocity.x += sin(self.force_rotation) * force_amount
 		self.velocity.y += cos(self.force_rotation) * force_amount
 	var mouse_pos = get_global_mouse_position()
-	if Input.is_action_pressed("click_main") and mouse_pos.distance_to(global_position) > 8:
+	if Input.is_action_pressed("click_main") and mouse_pos.distance_to(global_position) > 8 and not Globals.game_won:
 		x = lerp(x, 1.0/sqrt(mouse_pos.distance_to(global_position)) * SPEED, 0.06)
 		var direction = (mouse_pos - global_position).normalized()
 		velocity = lerp(velocity, direction * SPEED, 0.05)
@@ -197,6 +198,25 @@ func _physics_process(delta: float) -> void:
 		$Up.visible = false
 		$Down.visible = false
 		$Idle.visible = false
+	if Globals.game_won:
+		$Idle.visible = false
+		$DeathAnimation.visible = false
+		$Idle.visible = false
+		$LeftCorner.visible = false
+		$RightCorner.visible = false
+		$DownRightCorner.visible = false
+		$DownLeftCorner.visible = false
+		$Left.visible = false
+		$Right.visible = false
+		$Up.visible = false
+		$Down.visible = false
+		$Idle.visible = false
+
+		
+		if not won:
+			$WinAnimation.visible = true
+			$WinAnimation.play()
+			won = true
 	move_and_slide()
 	
 func _get_name():
