@@ -7,5 +7,6 @@
 script = ExtResource("1_woh0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1000
 rotation = 0.785398
 texture = ExtResource("2_yealm")

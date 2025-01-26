@@ -107,7 +107,7 @@ position = Vector2(283, 12049)
 script = ExtResource("1_dxwpj")
 
 [node name="Bubble" parent="." instance=ExtResource("1_7oifv")]
-position = Vector2(212, 12047)
+position = Vector2(211, 12052)
 motion_mode = 1
 
 [node name="Entities" type="Node2D" parent="."]
@@ -203,6 +203,22 @@ position = Vector2(5679, 11690)
 [node name="Geysir10" parent="Entities" instance=ExtResource("7_42wcw")]
 position = Vector2(4430, 10662)
 rotation = 3.14159
+
+[node name="Geysir17" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(3191, 11030)
+rotation = 1.5708
+
+[node name="Geysir18" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(3174, 11301)
+rotation = -1.5708
+
+[node name="Geysir19" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(3175, 11579)
+rotation = -1.5708
+
+[node name="Geysir20" parent="Entities" instance=ExtResource("7_42wcw")]
+position = Vector2(3190, 11859)
+rotation = 1.5708
 
 [node name="Geysir12" parent="Entities" instance=ExtResource("7_42wcw")]
 position = Vector2(5525, 9072)
@@ -483,7 +499,7 @@ position = Vector2(710, 11055)
 scale = Vector2(11, 1)
 
 [node name="KillZone3" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1782, 10479)
+position = Vector2(1784, 10479)
 scale = Vector2(1, 16)
 
 [node name="KillZone37" parent="KillZones" instance=ExtResource("11_143q6")]
@@ -519,6 +535,10 @@ scale = Vector2(5, 1)
 [node name="KillZone100" parent="KillZones" instance=ExtResource("11_143q6")]
 position = Vector2(1738, 9444)
 scale = Vector2(5, 1)
+
+[node name="KillZone110" parent="KillZones" instance=ExtResource("11_143q6")]
+position = Vector2(1737, 9516)
+scale = Vector2(3, 1)
 
 [node name="KillZone101" parent="KillZones" instance=ExtResource("11_143q6")]
 position = Vector2(1453, 9445)
@@ -563,20 +583,20 @@ scale = Vector2(6, 1)
 position = Vector2(684, 9234)
 
 [node name="KillZone4" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1867, 10478)
+position = Vector2(1863, 10478)
 scale = Vector2(1, 16)
 
 [node name="KillZone5" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1810, 10304)
+position = Vector2(1810, 10305)
 
 [node name="KillZone6" parent="KillZones" instance=ExtResource("11_143q6")]
 position = Vector2(1833, 10305)
 
 [node name="KillZone7" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1812, 10652)
+position = Vector2(1812, 10649)
 
 [node name="KillZone8" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1833, 10651)
+position = Vector2(1833, 10649)
 
 [node name="KillZone72" parent="KillZones" instance=ExtResource("11_143q6")]
 position = Vector2(4138, 10761)
@@ -676,13 +696,13 @@ position = Vector2(4211, 10357)
 position = Vector2(4235, 10455)
 
 [node name="KillZone51" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1068, 10624)
+position = Vector2(1068, 10623)
 
 [node name="KillZone52" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1089, 10624)
+position = Vector2(1089, 10623)
 
 [node name="KillZone53" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1140, 10734)
+position = Vector2(1140, 10736)
 
 [node name="KillZone54" parent="KillZones" instance=ExtResource("11_143q6")]
 position = Vector2(875, 10626)
@@ -706,40 +726,22 @@ position = Vector2(1455, 10216)
 position = Vector2(1476, 10216)
 
 [node name="KillZone27" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1498, 10217)
-
-[node name="KillZone28" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1455, 10216)
-
-[node name="KillZone29" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1476, 10216)
-
-[node name="KillZone30" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1498, 10217)
+position = Vector2(1498, 10216)
 
 [node name="KillZone31" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1357, 10300)
+position = Vector2(1357, 10301)
 
 [node name="KillZone32" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1378, 10300)
+position = Vector2(1380, 10301)
 
 [node name="KillZone33" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1400, 10301)
-
-[node name="KillZone34" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1357, 10300)
-
-[node name="KillZone35" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1378, 10300)
-
-[node name="KillZone36" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(1400, 10301)
+position = Vector2(1403, 10301)
 
 [node name="KillZone18" parent="KillZones" instance=ExtResource("11_143q6")]
 position = Vector2(2143, 10725)
 
 [node name="KillZone13" parent="KillZones" instance=ExtResource("11_143q6")]
-position = Vector2(2199, 10557)
+position = Vector2(2197, 10557)
 scale = Vector2(1, 12)
 
 [node name="KillZone14" parent="KillZones" instance=ExtResource("11_143q6")]
@@ -764,16 +766,16 @@ notify = false
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(1397, 9469)
+position = Vector2(1397, 9476)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(1507, 9468)
+position = Vector2(1507, 9476)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(1558, 9467)
+position = Vector2(1558, 9477)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(1635, 9466)
+position = Vector2(1635, 9478)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("17_s14wv")]
 position = Vector2(1746, 9479)
@@ -833,16 +835,16 @@ position = Vector2(794, 9720)
 position = Vector2(669, 9718)
 
 [node name="Coin201" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(96, 9636)
+position = Vector2(103, 9635)
 
 [node name="Coin202" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(181, 9648)
+position = Vector2(185, 9635)
 
 [node name="Coin203" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(182, 9716)
+position = Vector2(186, 9716)
 
 [node name="Coin204" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(73, 9726)
+position = Vector2(71, 9721)
 
 [node name="Coin12" parent="Coins" instance=ExtResource("17_s14wv")]
 position = Vector2(158, 10842)
@@ -1376,40 +1378,40 @@ position = Vector2(2229, 10468)
 position = Vector2(2286, 10468)
 
 [node name="Coin71" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2257, 10516)
+position = Vector2(2256, 10516)
 
 [node name="Coin72" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2229, 10516)
+position = Vector2(2227, 10516)
 
 [node name="Coin73" parent="Coins" instance=ExtResource("17_s14wv")]
 position = Vector2(2286, 10516)
 
 [node name="Coin74" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2254, 10564)
+position = Vector2(2255, 10564)
 
 [node name="Coin75" parent="Coins" instance=ExtResource("17_s14wv")]
 position = Vector2(2226, 10564)
 
 [node name="Coin76" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2283, 10564)
+position = Vector2(2285, 10564)
 
 [node name="Coin77" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2254, 10609)
+position = Vector2(2255, 10609)
 
 [node name="Coin78" parent="Coins" instance=ExtResource("17_s14wv")]
 position = Vector2(2226, 10609)
 
 [node name="Coin79" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2283, 10609)
+position = Vector2(2285, 10609)
 
 [node name="Coin80" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2254, 10656)
+position = Vector2(2255, 10656)
 
 [node name="Coin81" parent="Coins" instance=ExtResource("17_s14wv")]
 position = Vector2(2226, 10656)
 
 [node name="Coin82" parent="Coins" instance=ExtResource("17_s14wv")]
-position = Vector2(2283, 10656)
+position = Vector2(2285, 10656)
 
 [node name="Coin18" parent="Coins" instance=ExtResource("17_s14wv")]
 position = Vector2(1884, 11338)
@@ -1711,6 +1713,7 @@ theme_override_fonts/normal_font = ExtResource("24_i608p")
 text = "Mouse button 1 to thrust
 
 Let us see who is the master of the depths!"
+metadata/_edit_lock_ = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 z_index = -100

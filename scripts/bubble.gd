@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("click_main") and mouse_pos.distance_to(global_position) > 8 and not Globals.game_won:
 		x = lerp(x, 1.0/sqrt(mouse_pos.distance_to(global_position)) * SPEED, 0.06)
 		var direction = (mouse_pos - global_position).normalized()
-		velocity = lerp(velocity, direction * SPEED, 0.07)
+		velocity = lerp(velocity, direction * SPEED, 0.10)
 	else:
 		velocity = lerp(velocity, Vector2.ZERO, 0.03)
 	if mouse_pos.distance_to(global_position) < 96:

@@ -27,6 +27,7 @@ window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
+mouse_cursor/custom_image="res://assets/cursor.png"
 
 [input]
 

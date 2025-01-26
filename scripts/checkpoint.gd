@@ -13,5 +13,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if "_get_name" in body:
 		if body._get_name() == "Player" and notify:
+			Globals.status_text_changed = true
 			Globals.status_text = "Progress saved."
 			Globals.current_checkpoint = self
