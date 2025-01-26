@@ -107,7 +107,7 @@ position = Vector2(283, 12049)
 script = ExtResource("1_dxwpj")
 
 [node name="Bubble" parent="." instance=ExtResource("1_7oifv")]
-position = Vector2(211, 12052)
+position = Vector2(202, 12032)
 motion_mode = 1
 
 [node name="Entities" type="Node2D" parent="."]
@@ -760,7 +760,7 @@ position = Vector2(4017, 11700)
 position = Vector2(1283, 10686)
 
 [node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("15_nn521")]
-position = Vector2(208, 12055)
+position = Vector2(593, 12044)
 notify = false
 
 [node name="Coins" type="Node2D" parent="."]
@@ -1450,6 +1450,7 @@ script = ExtResource("6_ekkuk")
 offset_left = 4.0
 offset_right = 640.0
 offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("16_n0po7")
 script = ExtResource("7_wau4x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ACanvasLayer"]

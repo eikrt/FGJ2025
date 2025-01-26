@@ -31,3 +31,6 @@ func _process(delta: float) -> void:
 		running = false
 	if game_game_over:
 		pass
+	if Input.is_action_pressed("esc"):
+		get_tree().quit()
+		
