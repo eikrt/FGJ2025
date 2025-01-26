@@ -23,13 +23,18 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	Globals.status_text = "You opened a door!"
-	Globals.status_text_changed = true
+
 	if Globals.has_key_1 && index == 0:
+		Globals.status_text = "You opened the red door!"
+		Globals.status_text_changed = true
 		open = true
 	if Globals.has_key_2 && index == 1:
+		Globals.status_text = "You opened the green door!"
+		Globals.status_text_changed = true
 		open = true
 	if Globals.has_key_3 && index == 2:
+		Globals.status_text = "You opened the blue door!"
+		Globals.status_text_changed = true
 		open = true	
 
 

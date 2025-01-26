@@ -12,5 +12,7 @@ func _process(delta: float) -> void:
 	self.progress_ratio += delta * reverse * SPEED
 	if self.progress_ratio >= 1.0:
 		reverse = -1
+		$Shark/AnimatedSprite2D.flip_h = true
 	if self.progress_ratio <= 0.0:
 		reverse = 1
+		$Shark/AnimatedSprite2D.flip_h = false

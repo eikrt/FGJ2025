@@ -14,11 +14,14 @@ func _process(delta: float) -> void:
 	if Globals.status_text_changed or Globals.game_won:
 		self.visible = true
 		text_changed = true
+		
 		Globals.status_text_changed = false
-	if text_changed:
+	if text_changed and not Globals.game_won:
 		textChange += delta
 		if textChange > textTime:
 			textChange = 0
 			text_changed = false
 			self.visible = false
-			
+	if Globals.game_won:
+		self.position.x = 130
+		self.position.y = 360 / 2 + 130

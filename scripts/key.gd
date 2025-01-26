@@ -15,19 +15,24 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	Globals.status_text = "You found a key!"
-	Globals.status_text_changed = true
+	
 	if index == 0:
+		Globals.status_text = "You found the red key!"
+		Globals.status_text_changed = true
 		Globals.has_key_1 = true
 		$PickupSound.play()
 		self.visible = false
 		$Area2D/CollisionShape2D.disabled = true
 	if index == 1:
+		Globals.status_text = "You found the green key!"
+		Globals.status_text_changed = true
 		Globals.has_key_2 = true
 		$PickupSound.play()
 		self.visible = false
 		$Area2D/CollisionShape2D.disabled = true
 	if index == 2:
+		Globals.status_text = "You found the blue key!"
+		Globals.status_text_changed = true
 		Globals.has_key_3 = true
 		$PickupSound.play()
 		self.visible = false

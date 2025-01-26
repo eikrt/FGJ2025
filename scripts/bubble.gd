@@ -22,13 +22,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("click_main") and mouse_pos.distance_to(global_position) > 8 and not Globals.game_won:
 		x = lerp(x, 1.0/sqrt(mouse_pos.distance_to(global_position)) * SPEED, 0.06)
 		var direction = (mouse_pos - global_position).normalized()
-		velocity = lerp(velocity, direction * SPEED, 0.05)
+		velocity = lerp(velocity, direction * SPEED, 0.07)
 	else:
 		velocity = lerp(velocity, Vector2.ZERO, 0.03)
 	if mouse_pos.distance_to(global_position) < 96:
 		var direction = (mouse_pos - global_position).normalized()
 		var ang = self.get_angle_to(mouse_pos)
-		if Input.is_action_pressed("click_main"):
+		if Input.is_action_pressed("click_main") and not $MetamorphosisAnimation.is_playing():
 			if ang > 0.0 and ang < 1.2:
 				$Idle.visible = false
 				$LeftCorner.visible = true
@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 				$Up.visible = false
 				$Down.visible = false
 				$Idle.visible = false
-			if ang < -1.6 and ang > -2.2:
+			if ang < -1.4 and ang > -2.2:
 				$Idle.visible = false
 				$LeftCorner.visible = false
 				$RightCorner.visible = false
@@ -128,7 +128,7 @@ func _physics_process(delta: float) -> void:
 				$Up.visible = false
 				$Down.visible = false
 				$Idle.visible = false
-	if (not Input.is_action_pressed("click_main") or mouse_pos.distance_to(global_position) > 96):
+	if (not Input.is_action_pressed("click_main") or mouse_pos.distance_to(global_position) > 96) and not $MetamorphosisAnimation.is_playing():
 		$Idle.visible = false
 		$LeftCorner.visible = false
 		$RightCorner.visible = false
@@ -144,7 +144,7 @@ func _physics_process(delta: float) -> void:
 			$Idle.visible = false
 		
 	self.position -= velocity * x
-	if Globals.game_over:
+	if Globals.game_over and not $MetamorphosisAnimation.is_playing():
 		$Idle.visible = false
 		$LeftCorner.visible = false
 		$RightCorner.visible = false

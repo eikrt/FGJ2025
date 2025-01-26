@@ -7,37 +7,39 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4poo"]
 height = 70.0
 
-[node name="Propeller" type="Area2D"]
+[node name="PropellerHost" type="Node2D"]
+
+[node name="Propeller" type="Area2D" parent="."]
 script = ExtResource("1_aoh6f")
 
-[node name="Blades" type="Sprite2D" parent="."]
+[node name="Blades" type="Sprite2D" parent="Propeller"]
 texture = ExtResource("1_d7boy")
 
-[node name="Propeller" type="Sprite2D" parent="."]
-texture = ExtResource("2_ajqgq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Propeller"]
 position = Vector2(-2, -33)
 shape = SubResource("CapsuleShape2D_y4poo")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Propeller"]
 position = Vector2(16, 19)
 rotation = 2.39459
 shape = SubResource("CapsuleShape2D_y4poo")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Propeller"]
 position = Vector2(-14, 21)
 rotation = 3.831
 shape = SubResource("CapsuleShape2D_y4poo")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Propeller"]
 position = Vector2(-30, -8)
 rotation = 5.14698
 shape = SubResource("CapsuleShape2D_y4poo")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Propeller"]
 position = Vector2(25, -10)
 rotation = 4.30922
 shape = SubResource("CapsuleShape2D_y4poo")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Propeller2" type="Sprite2D" parent="."]
+texture = ExtResource("2_ajqgq")
+
+[connection signal="body_entered" from="Propeller" to="Propeller" method="_on_body_entered"]

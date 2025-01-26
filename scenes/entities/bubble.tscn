@@ -1371,6 +1371,7 @@ sprite_frames = SubResource("SpriteFrames_whsni")
 
 [node name="BirthSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7jewf")
+volume_db = 3.0
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_8d85f")
